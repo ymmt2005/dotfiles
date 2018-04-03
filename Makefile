@@ -13,7 +13,7 @@ all:
 	@echo Making symlinks to dotfiles...
 	for f in $(FILES); do \
 		rm -f $$HOME/$$f; \
-		ln -s $($PWD)/$$f $$HOME/$$f; \
+		ln -s $(PWD)/$$f $$HOME/$$f; \
 	done
 
 	@echo Insert hooks...
