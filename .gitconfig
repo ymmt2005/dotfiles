@@ -1,0 +1,32 @@
+[user]
+	name = ymmt
+	email = ymmt@cybozu.com
+
+[alias]
+    st = status -sb
+    co = checkout
+    ci = commit
+    br = branch
+    up = fetch --all --prune
+    df = diff --find-renames
+    changed = whatchanged
+    l = log --pretty=format:\"%ci %C(yellow)%h%Creset [%an] %Cgreen%s %C(cyan)%d%Creset\"
+    lg = log --graph --pretty='%x09%h %an%x09%s %Cred%d%Creset'
+    changelog = log --date=short --date-order --pretty=format:'%ad %ae %s'
+    del = !git checkout master && git branch -D
+    su = !git config user.name ymmt2005 && git config user.email ymmt2005@gmail.com
+
+[core]
+	pager = less -R -+S
+	editor = vi
+[color]
+	ui = auto
+[merge]
+	ff = false
+[pull]
+	rebase = true
+[push]
+	default = simple
+
+[include]
+	path = .gitconfig.private

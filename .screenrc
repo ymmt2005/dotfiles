@@ -1,0 +1,5 @@
+#vbell off
+autodetach on
+deflogin off
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+defscrollback 10000
