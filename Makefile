@@ -17,6 +17,9 @@ all:
 	done
 
 	@echo Insert hooks...
+	if ! grep -q '^. $(PWD)/.bashrc' $$HOME/.bashrc; then \
+		echo ". $(PWD)/.bashrc" >>$$HOME/.bashrc; \
+	fi
 	if ! grep -q '^. $(PWD)/.profile' $$HOME/.profile; then \
 		echo ". $(PWD)/.profile" >>$$HOME/.profile; \
 	fi
