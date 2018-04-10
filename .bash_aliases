@@ -6,4 +6,5 @@ gd() {
 }
 dgc() {
     docker ps -aq | xargs docker rm
+    docker rmi $(docker images -f dangling=true -q)
 }
