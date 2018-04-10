@@ -4,3 +4,6 @@ alias man='PAGER=less man'
 gd() {
     godoc "$@" | less
 }
+dgc() {
+    docker ps -aq | xargs docker rm
+}
