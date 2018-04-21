@@ -15,7 +15,10 @@
 (global-font-lock-mode 1)
 
 ;;; text-mode
+(defun remove-electric-indent-mode ()
+  (electric-indent-local-mode -1))
 (add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'text-mode-hook 'remove-electric-indent-mode)
 (setq-default indent-tabs-mode nil)
 
 ;;; c-mode settings
@@ -85,9 +88,9 @@
 ;;; github favored markdown (in emacs-goodies-el package)
 (setq markdown-follow-wiki-link-on-enter nil)
 (setq auto-mode-alist (nconc '(("\\.md\\'" . markdown-mode)) auto-mode-alist))
-(add-hook 'markdown-mode-hook
-          (lambda ()
-            (electric-indent-local-mode nil)))
+
+;;; YAML
+(add-hook 'yaml-mode-hook 'remove-electric-indent-mode)
 
 ;;; white space highliting (in emacs-goodies-el)
 (require 'show-wspace)
