@@ -2,7 +2,7 @@ FILES = .emacs .gitconfig .bash_aliases .screenrc .vimrc .Xdefaults
 
 PACKAGES = build-essential manpages-dev glibc-doc git \
 	gdb debconf-utils fakeroot devscripts \
-	aspell aspell-en \
+	aspell aspell-en jq \
 	gnome-terminal libgl1-mesa-glx libgl1-mesa-dri dbus-x11 \
 	fonts-motoya-l-cedar fonts-ricty-diminished \
 	emacs emacs-goodies-el dbskkd-cdb ddskk golang-mode
