@@ -4,12 +4,13 @@
 ;(set-face-attribute 'default nil :family "Motoya LMaru" :height 135)
 ;(set-face-attribute 'default nil :family "Ricty Diminished" :height 135)
 (set-face-attribute 'default nil :family "Ricty Diminished" :height 130)
+;(set-face-attribute 'default nil :family "Ricty Diminished" :height 120)
 
 ;;; MELPA
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
+;(package-initialize)
 
 ;;; font-lock
 (global-font-lock-mode 1)
@@ -115,3 +116,26 @@
 (global-set-key "\C-cr" 'fill-region)
 (global-set-key "\M-g" 'goto-line)
 (global-set-key "\C-h" 'delete-backward-char)
+
+;;; frames
+(when window-system (set-frame-size (selected-frame) 100 52))
+(add-to-list 'default-frame-alist '(height . 52))
+(add-to-list 'default-frame-alist '(width . 100))
+(global-set-key "\C-cl"
+                (lambda ()
+                  (interactive)
+                  (set-frame-size (selected-frame) 100 52)))
+
+;;; custom
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (yaml-mode toml-mode systemd markdown-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(fixed-pitch ((t nil))))
