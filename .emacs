@@ -4,6 +4,7 @@
 ;(set-face-attribute 'default nil :family "Motoya LMaru" :height 135)
 ;(set-face-attribute 'default nil :family "Ricty Diminished" :height 135)
 (set-face-attribute 'default nil :family "Ricty Diminished" :height 130)
+(set-face-attribute 'fixed-pitch nil :family 'unspecified)
 
 ;;; MELPA
 (require 'package)
