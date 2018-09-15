@@ -15,6 +15,7 @@
     changelog = log --date=short --date-order --pretty=format:'%ad %ae %s'
     del = !git checkout master && git branch -D
     su = !git config user.name ymmt2005 && git config user.email ymmt2005@gmail.com
+    vgrep = !git grep "$@" -- "./*" ":!vendor/**"
 
 [core]
 	pager = less -R -+S

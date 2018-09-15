@@ -75,6 +75,18 @@
             (setq truncate-lines t)
             (setq tab-width 4)))
 (add-hook 'before-save-hook 'gofmt-before-save)
+(defun go-insert-struct-tag (name json yaml toml)
+  (interactive
+   (list (read-string "Input name: ")
+         (y-or-n-p "json? ")
+         (y-or-n-p "yaml? ")
+         (y-or-n-p "toml? ")))
+  (let ((tags nil))
+    (if toml (setq tags (cons (concat "toml:\"" name "\"") tags)))
+    (if yaml (setq tags (cons (concat "yaml:\"" name "\"") tags)))
+    (if json (setq tags (cons (concat "json:\"" name "\"") tags)))
+    (insert
+     (concat "`" (mapconcat 'identity tags " ") "`"))))
 
 ;;; SQL mode
 (setq sql-product 'mysql)
