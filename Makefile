@@ -1,4 +1,4 @@
-FILES = .emacs .gitconfig .bash_aliases .screenrc .vimrc .Xdefaults
+FILES = .emacs .gitconfig .bash_aliases .screenrc .tmux.conf .vimrc .Xdefaults
 
 PACKAGES = build-essential manpages-dev glibc-doc git \
 	gdb debconf-utils fakeroot devscripts \

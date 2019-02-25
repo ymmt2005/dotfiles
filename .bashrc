@@ -8,9 +8,11 @@ git_branch() {
 }
 PS1='\[\033[32m\]\h\[\033[00m\]:\[\033[01;34m\]$(git_branch)\[\033[00m\]:\w\$ '
 
+export LESS="-XF"
 export GOPATH=$HOME/go
 export GO111MODULE=on
-PATH=$HOME/go/bin:/usr/local/go/bin:$PATH
+PATH=$HOME/tools/bin:$HOME/go/bin:/usr/local/go/bin:$PATH
+umask 022
 
 if [ -f $HOME/.bashrc.local ]; then
     . $HOME/.bashrc.local

@@ -9,3 +9,4 @@ dgc() {
     docker rmi $(docker images -f dangling=true -q)
 }
 alias mssh='ssh -o UserKnownHostsFile=/dev/null'
+alias odx='od -tx1z -Ax -v'
