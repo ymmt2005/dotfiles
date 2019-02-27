@@ -28,6 +28,3 @@
 	rebase = true
 [push]
 	default = simple
-
-[include]
-	path = .gitconfig.private
