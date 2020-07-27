@@ -17,6 +17,7 @@
     su = !git config user.name ymmt2005 && git config user.email ymmt2005@gmail.com
     vgrep = !git grep "$@" -- "./*" ":!vendor/**"
     tagv = !git tag -l --sort=-v:refname | head
+    cs = commit -s
 
 [core]
 	pager = less -R -+S
