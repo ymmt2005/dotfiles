@@ -1,6 +1,6 @@
-FILES = .emacs .gitconfig .bash_aliases .screenrc .tmux.conf .vimrc .Xdefaults
+FILES = .gitconfig .bash_aliases .screenrc .tmux.conf .vimrc
 
-PACKAGES = build-essential manpages-dev glibc-doc git \
+PACKAGES = build-essential manpages-dev glibc-doc linux-doc git \
 	gdb debconf-utils fakeroot devscripts \
 	aspell aspell-en jq fonts-ricty-diminished
 
