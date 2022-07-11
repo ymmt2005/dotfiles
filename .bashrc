@@ -12,7 +12,8 @@ kube_prompt() {
    echo "k8s($kubectl_project)"
 }
 
-PS1='\[\033[32m\]\h\[\033[00m\]:\[\033[01;34m\]$(git_branch)\[\033[00m\]:$(kube_prompt):\w\$ '
+#PS1='\[\033[32m\]\h\[\033[00m\]:\[\033[01;34m\]$(git_branch)\[\033[00m\]:$(kube_prompt):\w\$ '
+PS1='\[\033[32m\]\h\[\033[00m\]:\[\033[01;34m\]$(git_branch)\[\033[00m\]:\w\$ '
 
 export LESS="-XF"
 export GOPATH=$HOME/go
