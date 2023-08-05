@@ -16,8 +16,10 @@ kube_prompt() {
 PS1='\[\033[32m\]\h\[\033[00m\]:\[\033[01;34m\]$(git_branch)\[\033[00m\]:\w\$ '
 
 export LESS="-XF"
+export EDITOR=vi
 export GOPATH=$HOME/go
 export GO111MODULE=on
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 PATH=$HOME/go/bin:/usr/local/go/bin:$PATH
 umask 022
 
