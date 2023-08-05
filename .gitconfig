@@ -12,7 +12,7 @@
     l = log --pretty=format:\"%ci %C(yellow)%h%Creset [%an] %Cgreen%s %C(cyan)%d%Creset\"
     lg = log --graph --pretty='%x09%h %an%x09%s %Cred%d%Creset'
     changelog = log --date=short --date-order --pretty=format:'%ad %ae %s'
-    del = !git checkout $(/usr/bin/gh repo view --json 'defaultBranchRef' -t '{{.defaultBranchRef.name}}') && git branch -D
+    del = !git checkout $(git rev-parse --abbrev-ref origin/HEAD | cut -f 2 -d /) && git branch -D
     su = !git config user.name ymmt2005 && git config user.email ymmt2005@gmail.com
     vgrep = !"f() { git grep \"$@\" ':!vendor/'; }; f"
     tagv = !git tag -l --sort=-v:refname | head
