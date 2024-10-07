@@ -15,7 +15,7 @@ kube_prompt() {
 #PS1='\[\033[32m\]\h\[\033[00m\]:\[\033[01;34m\]$(git_branch)\[\033[00m\]:$(kube_prompt):\w\$ '
 PS1='\[\033[32m\]\h\[\033[00m\]:\[\033[01;34m\]$(git_branch)\[\033[00m\]:\w\$ '
 
-export LESS="-XF"
+#export LESS="-XF"
 export EDITOR=vi
 export GOPATH=$HOME/go
 export GO111MODULE=on
