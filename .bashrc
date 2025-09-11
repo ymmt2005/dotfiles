@@ -23,6 +23,10 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 PATH=$HOME/go/bin:/usr/local/go/bin:$PATH
 umask 022
 
+if [ -n "$WSL_DISTRO_NAME" ]; then
+    export BROWSER='/mnt/c/Windows/System32/rundll32.exe url.dll,FileProtocolHandler'
+fi
+
 if [ -f $HOME/.bashrc.local ]; then
     . $HOME/.bashrc.local
 fi
