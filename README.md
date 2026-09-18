@@ -14,7 +14,14 @@ Make targets
 
 * `make all`
 
-    Install dot files under $HOME.
+    Install dot files under $HOME. This also runs `make claude`.
+
+* `make claude`
+
+    Install the Claude Code status line: symlinks
+    `.claude/statusline-command.sh` into `$HOME/.claude/` and merges
+    `.claude/statusline.json` into `$HOME/.claude/settings.json`
+    (requires `jq`).
 
 Usage
 -----
