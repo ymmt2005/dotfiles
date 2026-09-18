@@ -20,7 +20,9 @@ export EDITOR=vi
 export GOPATH=$HOME/go
 export GO111MODULE=on
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-PATH=$HOME/go/bin:/usr/local/go/bin:$PATH
+export ANDROID_HOME=$HOME/android-sdk
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
+PATH=$HOME/flutter/bin:$HOME/go/bin:/usr/local/go/bin:$HOME/.local/bin:$PATH
 umask 022
 
 if [ -n "$WSL_DISTRO_NAME" ]; then

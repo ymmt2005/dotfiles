@@ -6,7 +6,7 @@ PACKAGES = build-essential manpages-dev glibc-doc linux-doc git jq \
 
 PWD := $(shell pwd)
 
-all:
+all: claude
 	@echo Making symlinks to dotfiles...
 	for f in $(FILES); do \
 		rm -f $$HOME/$$f; \
@@ -26,8 +26,20 @@ all:
 		echo 'fi' >>$$HOME/.profile; \
 	fi
 
+claude:
+	@echo Installing Claude Code status line...
+	mkdir -p $$HOME/.claude
+	rm -f $$HOME/.claude/statusline-command.sh
+	ln -s $(PWD)/.claude/statusline-command.sh $$HOME/.claude/statusline-command.sh
+	if [ -f $$HOME/.claude/settings.json ]; then \
+		jq -s '.[0] * .[1]' $$HOME/.claude/settings.json $(PWD)/.claude/statusline.json >$$HOME/.claude/settings.json.tmp; \
+	else \
+		cp $(PWD)/.claude/statusline.json $$HOME/.claude/settings.json.tmp; \
+	fi
+	mv $$HOME/.claude/settings.json.tmp $$HOME/.claude/settings.json
+
 setup:
 	@echo Install packages...
 	sudo apt-get -y install --no-install-recommends $(PACKAGES)
 
-.PHONY:	all setup
+.PHONY:	all claude setup
