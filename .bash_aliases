@@ -10,3 +10,4 @@ dgc() {
 }
 alias mssh='ssh -o UserKnownHostsFile=/dev/null'
 alias odx='od -tx1z -Ax -v'
+alias mage='go tool mage'
