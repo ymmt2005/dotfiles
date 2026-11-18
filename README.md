@@ -40,6 +40,26 @@ There are some optional files you may create to write per-host configurations.
 
     If exists, read from `$HOME/.gitconfig`.
 
+Claude Code agents and skills
+-----------------------------
+
+`.claude/agents/` and `.claude/skills/` hold review agents and skills for Claude Code.
+`make` does not install them.
+Copy them into a project's `.claude/`, or into `$HOME/.claude/` to use them everywhere.
+A personal skill overrides a project skill with the same name, so do not install one that a project already has.
+
+* `hunt-bugs` skill, with the `bug-hunter`, `attack-refuter` and `bug-verifier` agents
+
+    Hunts correctness bugs in a code change in three stages.
+
+* `code-quality-reviewer` agent
+
+    Reviews a code change for its long-term cost.
+
+* `architect-reviewer` agent
+
+    Reviews a change or a design from an architect's view.
+
 License
 -------
 
